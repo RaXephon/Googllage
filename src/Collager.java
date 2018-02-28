@@ -85,31 +85,6 @@ public class Collager extends JFrame {
 			ArrayList<BufferedImage> aolImgs = new ArrayList<BufferedImage>();
 			ArrayList<BufferedImage> thatIwannaUse = new ArrayList<BufferedImage>();
 			
-			int count = 0;
-			for(String url: urls){
-				try {
-					BufferedImage i = ImageIO.read(new URL(url));
-					aolImgs.add(i);
-					count++;
-					if(count > 25)break;
-				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println(url+" was read!");
-			}
-			System.out.println("URLS DONE REDING");
-			
-			for(BufferedImage im : aolImgs){
-				if(new Image(im).getBufferedImage() != null){
-					Image aol = new Image(im);
-					BufferedImage aolBImg = aol.getBufferedImage(miniImageWidth, miniImageHeight, false);
-					thatIwannaUse.add(aolBImg);
-				}
-			}
 			System.out.println(thatIwannaUse.toString());
 			
 			//Image googlePic = new Image(googlePicBuffer);
